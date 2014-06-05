@@ -1,0 +1,20 @@
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "china where", '#', id: "logo" %>
+          <nav>
+            <ul class="nav pull-right">
+              <li><%= link_to "Home",    '/' %></li>
+              <li><%= link_to "Help",    help_path %></li>
+              <% if current_user %>
+                <li><%= link_to('退出', destroy_user_session_path, :method => :delete) %> </li>|
+                <li><%= link_to('修改密码', edit_registration_path(:user)) %></li>
+              <% else %>
+   	            <li><%= link_to('注册', new_registration_path(:user)) %> </li>|
+                <li><%= link_to('登陆', new_session_path(:user)) %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
